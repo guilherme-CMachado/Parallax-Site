@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parallax</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">Logo</a>
+        <ul>
+            <li><a href="#" class="active">Home</a></li>
+            <li><a href="#">Sobre</a></li>
+            <li><a href="#">Trabalho</a></li>
+            <li><a href="#">Contato</a></li>
+        </ul>
+    </header>
+    <section>
+        <img src="images/stars.png" alt="stars">
+        <img src="images/moon.png" alt="moon">
+        <img src="images/mountains_behind.png" alt="mountains_behind">
+        <h2 id="text">Moon Light</h2>
+        <a href="#sec" class="button">Explore</a>
+        <img src="images/mountains_front.png" alt="mountains_front">
+    </section>
+    <div class="sec" id="sec">
+        <h2>Parallax Scroll Event</h2>
+        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<br><br>
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            Autem debitis iste quas obcaecati ex molestiae tempore repellendus vero, ipsam, impedit sunt eligendi animi corrupti aperiam corporis necessitatibus est voluptas eaque?
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi neque alias fugiat error harum inventore ad maxime, iusto vero. Pariatur facilis illum iusto ullam dolorem dolore aperiam temporibus, at officia?<br><br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis labore voluptatibus incidunt. 
+            Assumenda soluta sunt, ad amet at tenetur a! Suscipit similique hic dolores dolorum minima eaque laborum vel architecto? Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora corporis repellat voluptas voluptatem, id sapiente libero qui quidem culpa. Dicta molestiae quia animi esse aut vel error odio recusandae expedita.</p>
+    </div>
+    <script>
+        let stars = document.getElementById('stars');
+        let moon = document.getElementById('moon');
+        let mountains_behind = document.getElementById('mountains_behind');
+        let text = document.getElementById9('text');
+        let button = document.getElementById('button');
+        let mountains_front = document.getElementById('mountains_front'); 
+
+        window.addEventListener('scroll', function(){
+            let value = window.scrollY;
+            stars.style.left = value * 0.25 + 'px';
+            moon.style.top = value * 1.05 + 'px';
+            mountains_behind.style.top = value * 0.5 + 'px';
+            mountains_front.style.top = value * 0 + 'px';
+            text.style.marginRight = value * 0 + 'px';
+        })
+    </script>
+</body>
+</html>
